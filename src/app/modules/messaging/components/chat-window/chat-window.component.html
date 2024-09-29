@@ -1,0 +1,34 @@
+<div class="chat-window h-full bg-white flex flex-col">
+  <div class="chat-header bg-emerald-700 text-white p-4 flex justify-between items-center">
+    <div>
+      <h2 class="text-lg font-semibold">Discussion avec {{ otherUser?.name }}</h2>
+      <p class="text-sm">Objet : 
+        <a [routerLink]="['/items', conversation?.announcement?.id]" class="underline text-blue-200">
+          {{ conversation?.announcement?.title }}
+        </a>
+      </p>
+    </div>
+    <div>
+      <a [routerLink]="['/items', conversation?.announcement?.id]">
+        <img [src]="conversation?.announcement?.photo" alt="Annonce" class="w-16 h-16 rounded-md object-cover shadow-md">
+      </a>
+    </div>
+  </div>
+  <div class="chat-messages flex-grow overflow-y-auto p-4 bg-gray-50">
+    <div *ngFor="let message of conversation?.messages; let i = index"
+         [ngClass]="{'sent': message.senderId === currentUserId, 'received': message.senderId !== currentUserId}"
+         class="message-container mb-4 flex items-start"
+         [ngClass]="{'animate-slide-in': !displayedMessages.includes(message.id)}"> 
+      <div class="message-content max-w-lg p-3 rounded-lg shadow-sm" 
+           [ngClass]="{'bg-emerald-100 text-right': message.senderId === currentUserId, 'bg-white text-left border border-gray-300': message.senderId !== currentUserId}">
+        <p>{{ message.content }}</p>
+        <small class="block text-xs text-gray-500">{{ message.timestamp | date:'short' }}</small>
+      </div>
+    </div>
+  </div>
+  <form [formGroup]="messageForm" (ngSubmit)="sendMessage()" class="p-4 bg-gray-100 flex items-center fixed bottom-0 left-0 right-0">
+    <input formControlName="message" placeholder="Écrire un message..." class="message-input flex-grow p-3 rounded-lg border-gray-300 focus:outline-none focus:ring-2 focus:ring-emerald-400 mr-4">
+    <button type="submit" [disabled]="messageForm.invalid" class="send-button bg-emerald-500 text-white px-6 py-3 rounded-lg hover:bg-emerald-600 transition">Envoyer</button>
+  </form>
+</div>
+

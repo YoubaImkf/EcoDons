@@ -1,0 +1,74 @@
+.header {
+  @apply sticky top-0 bg-white shadow-lg py-6 z-50;
+
+  .left-section {
+    @apply flex items-center space-x-6;
+
+    .site-logo {
+      img {
+        @apply h-14 w-auto;
+      }
+    }
+
+    .navigation {
+      @apply flex items-center space-x-6;
+
+      .nav-item {
+        @apply text-base font-medium text-gray-700 hover:text-teal-700 transition-colors duration-300;
+        position: relative;
+        &:hover {
+          text-decoration: none;
+          &::after {
+            content: "";
+            display: block;
+            width: 100%;
+            height: 2px;
+            background: #2c7a7b;
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+          }
+        }
+      }
+    }
+  }
+
+  .right-section {
+    @apply flex items-center space-x-4;
+
+    .user-name {
+      @apply text-lg font-semibold;
+    }
+
+    .logout-button {
+      @apply bg-teal-600 text-white py-2 px-5 rounded-full shadow-md hover:bg-teal-700 transition-transform transform hover:scale-110;
+    }
+  }
+
+  .signup-button {
+    @apply bg-teal-600 text-white py-2 px-5 rounded-full shadow-md hover:bg-teal-700 transition-transform transform hover:scale-110;
+  }
+}
+
+.notification-badge {
+  @apply bg-red-500 text-white rounded-full text-xs w-5 h-5 flex items-center justify-center;
+  margin-left: 8px;  
+  position: relative; 
+}
+
+.notification-badge::after {
+  @apply text-white;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+

@@ -1,0 +1,18 @@
+{
+  "discussions": [
+    {
+      "id": "discussion1",
+      "users": [
+        { "userId": "jCYh7e4", "name": "Redouane" },
+        { "userId": "user2", "name": "Alice" }
+      ],
+      "announcement": { "id": "ad1", "title": "Chaise en bois", "photo": "assets/items/chaise-en-bois.jpeg" },
+      "lastMessageDate": "2024-09-25T10:30:00",
+      "unreadMessagesFor": ["user1"],
+      "messages": [
+        { "messageId": "msg1", "senderId": "user1", "text": "Bonjour, je suis intéressé par votre chaise.", "timestamp": "2024-09-25T09:30:00", "read": false },
+        { "messageId": "msg2", "senderId": "user2", "text": "Bonjour Redouane, elle est toujours disponible.", "timestamp": "2024-09-25T10:00:00", "read": false }
+      ]
+    }
+  ]
+}

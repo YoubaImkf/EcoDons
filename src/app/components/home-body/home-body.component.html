@@ -1,0 +1,110 @@
+<section class="main-section">
+  <section class="hero-section bg-cover bg-center relative" *ngIf="!isLoggedIn">
+    <div class="overlay absolute inset-0 bg-gradient-to-r from-teal-600 via-emerald-600 to-navy-blue opacity-90"></div>
+    <div class="container relative z-20 mx-auto text-center py-32 md:py-48 lg:py-64">
+      <h1 class="hero-title text-6xl md:text-7xl font-extrabold text-white drop-shadow-2xl animate-fade-in-up">Rejoignez l'économie circulaire avec EcoDon</h1>
+      <p class="hero-subtitle text-2xl md:text-3xl text-gray-100 mt-6 max-w-3xl mx-auto leading-relaxed animate-fade-in-up delay-200">
+        Contribuez à un avenir durable en partageant vos objets inutilisés avec notre communauté. Simple, gratuit et écologique !
+      </p>
+      <div class="hero-buttons mt-12 flex justify-center space-x-8 animate-fade-in-up delay-400">
+        <button (click)="navigateToSignup()" class="cta-button signup-button transform hover:scale-110 hover:shadow-xl transition-all">
+          <i class="fas fa-user-plus mr-2"></i> Inscription
+        </button>
+        <button (click)="navigateToLogin()" class="cta-button login-button transform hover:scale-110 hover:shadow-xl transition-all">
+          <i class="fas fa-sign-in-alt mr-2"></i> Connexion
+        </button>
+      </div>
+    </div>
+  </section>
+  <section class="annonces-section" *ngIf="isLoggedIn">
+    <h2 class="text-4xl font-bold text-center text-teal-700 mb-8">Les annonces disponibles</h2>
+    <div class="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 py-8">
+      <div class="md:col-span-1 bg-white p-6 rounded-lg shadow-lg">
+        <h3 class="text-xl font-semibold mb-4 text-teal-600">Filtrer les annonces</h3>
+        <div class="mb-4">
+          <label for="city" class="block text-gray-700 font-semibold mb-2">Ville</label>
+          <select id="city" [(ngModel)]="selectedCity" (change)="filterItems()" class="w-full p-2 border border-gray-300 rounded-lg">
+            <option value="">Toutes les villes</option>
+            <option *ngFor="let city of cities" [value]="city">{{ city }}</option>
+          </select>
+        </div>
+        <div class="mb-4">
+          <label for="category" class="block text-gray-700 font-semibold mb-2">Catégorie</label>
+          <select id="category" [(ngModel)]="selectedCategory" (change)="filterItems()" class="w-full p-2 border border-gray-300 rounded-lg">
+            <option value="">Toutes les catégories</option>
+            <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
+          </select>
+        </div>
+        <div class="mb-4">
+          <label for="status" class="block text-gray-700 font-semibold mb-2">Statut</label>
+          <select id="status" [(ngModel)]="selectedStatus" (change)="filterItems()" class="w-full p-2 border border-gray-300 rounded-lg">
+            <option value="">Tous les statuts</option>
+            <option value="disponible">Disponible</option>
+            <option value="donné">Donné</option>
+          </select>
+        </div>
+        <div class="mb-4">
+          <label for="search" class="block text-gray-700 font-semibold mb-2">Recherche</label>
+          <input type="text" id="search" [(ngModel)]="searchTerm" (input)="filterItems()" placeholder="Rechercher un titre" class="w-full p-2 border border-gray-300 rounded-lg" />
+        </div>
+      </div>
+      <div class="md:col-span-3 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div *ngFor="let item of filteredItems" class="annonce-card bg-cream p-6 rounded-lg shadow-lg hover:shadow-xl transition-all transform" appHoverEffect>
+          <img [src]="item.photo" alt="Photo de l'objet" class="w-full h-56 object-cover rounded-lg mb-4">
+        
+          <h3 class="text-2xl font-semibold text-teal-600 mb-2">{{ item.title | capitalize }}</h3>
+        
+          <div class="text-gray-700 mb-4">
+            <p><strong>Description : </strong>{{ item.description | capitalize  }}</p>
+            <p class="text-sm"><strong>Localisation : </strong>{{ item.location }}</p>
+            <p class="text-sm"><strong>Statut : </strong><span [ngClass]="{'text-teal-600': item.status === 'disponible', 'text-red-600': item.status !== 'disponible'}">{{ item.status }}</span></p>
+          </div>
+        
+          <div class="flex justify-between items-center mt-4">
+            <button (click)="viewItemDetails(item.id)" class="bg-navy-blue text-white px-4 py-2 rounded-full shadow-lg hover:bg-dark-navy transition-all transform">
+              Voir l'annonce
+            </button>
+            <button (click)="addToFavorites(item.id)" class="bg-coral text-white px-4 py-2 rounded-full shadow-lg hover:bg-dark-coral transition-all transform">
+              <i class="fas fa-heart mr-1"></i> Ajouter aux favoris
+            </button>
+          </div>
+      
+        
+          <button (click)="contactDonor(item)" class="bg-gray-500 text-white px-4 py-2 rounded-full shadow mt-4 hover:bg-gray-600 transition-transform transform hover:scale-105">
+            Contacter
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  
+  
+
+  <section class="feature-section py-20 bg-cream">
+    <div class="container mx-auto px-4 lg:px-8">
+      <h2 class="text-4xl font-bold text-center text-teal-700 mb-12 animate-slide-in-down">Pourquoi choisir EcoDon ?</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12 animate-fade-in-up">
+        <div class="feature-card bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-all transform hover:scale-105">
+          <img src="../../../assets/fond/facile.jpeg" alt="Facile à utiliser" class="w-full h-56 object-cover rounded-lg mb-4">
+          <h3 class="text-2xl font-semibold text-teal-600 mb-2">Facile à utiliser</h3>
+          <p class="text-gray-700">Déposez ou trouvez un objet en quelques clics, sans complexité.</p>
+        </div>
+        <div class="feature-card bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-all transform hover:scale-105">
+          <img src="../../../assets/fond/communauté.jpeg" alt="Communauté solidaire" class="w-full h-56 object-cover rounded-lg mb-4">
+          <h3 class="text-2xl font-semibold text-teal-600 mb-2">Rejoignez la communauté</h3>
+          <p class="text-gray-700">Une communauté engagée pour un monde plus vert et solidaire.</p>
+        </div>
+        <div class="feature-card bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-all transform hover:scale-105">
+          <img src="../../../assets/fond/zero.jpeg" alt="Impact écologique" class="w-full h-56 object-cover rounded-lg mb-4">
+          <h3 class="text-2xl font-semibold text-teal-600 mb-2">Réduisez votre impact écologique</h3>
+          <p class="text-gray-700">Participez à un monde durable en réutilisant les objets.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+</section>
+
+
+

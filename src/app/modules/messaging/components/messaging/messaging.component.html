@@ -1,0 +1,8 @@
+<div class="messaging-layout flex h-full">
+  <div class="chat-list-container w-1/3 h-full bg-gray-100 shadow-lg overflow-y-auto">
+    <app-chat-list (conversationSelected)="onConversationSelected($event)"></app-chat-list>
+  </div>
+  <div class="chat-window-container w-2/3 h-full bg-white">
+    <app-chat-window *ngIf="selectedConversationId" [conversationId]="selectedConversationId"></app-chat-window>
+  </div>
+</div>

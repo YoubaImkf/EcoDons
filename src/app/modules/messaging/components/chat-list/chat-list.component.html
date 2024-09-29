@@ -1,0 +1,39 @@
+<div class="chat-list w-full h-full bg-gray-100 p-4 overflow-y-auto">
+  <h2 class="text-xl font-semibold text-emerald-700 mb-4">Conversations</h2>
+  <div *ngIf="conversations.length === 0" class="empty-state-container flex flex-col items-center justify-center min-h-screen">
+    <h2 class="text-4xl font-extrabold text-gray-600 mb-4">C'est désert ici...</h2>
+    <p class="text-gray-500 text-lg mb-8">Vous n'avez pas encore commencé de conversation.</p>
+    <a routerLink="/" class="bg-[#2c7a7b] text-white px-6 py-3 rounded-full shadow-md hover:bg-[#276749] transition-transform transform hover:scale-105">
+      Découvrez les annonces et contactez les annonceurs
+    </a>
+</div>
+  <ul *ngIf="conversations.length > 0">
+    <li *ngFor="let conversation of conversations" 
+        (click)="openChat(conversation.id)" 
+        [ngClass]="{'unread': conversation.unreadMessagesFor.includes(currentUserId)}"
+        class="cursor-pointer bg-white shadow-sm p-4 rounded-lg mb-4 transition-transform hover:bg-emerald-100 hover:shadow-md transform hover:-translate-y-1">
+      <div class="flex items-center space-x-3">
+        <div class="avatar w-10 h-10 rounded-full flex items-center justify-center text-white font-bold" 
+             [ngStyle]="{'background-color': '#2c7a7b'}">
+          {{ getOtherUser(conversation).charAt(0) }}
+        </div>
+        <div>
+          <span class="chat-user font-semibold text-gray-700">{{ getOtherUser(conversation) }}</span>
+          <p class="text-sm text-gray-500">Annonce : {{ conversation.announcement.title }}</p>
+        </div>
+        <div class="flex-grow"></div>
+        <span class="chat-date text-xs text-gray-500">{{ conversation.lastUpdated | date:'short' }}</span>
+        <span *ngIf="conversation.unreadMessagesFor.includes(currentUserId)" class="ml-2 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+          {{ conversation.unreadMessagesFor.length }}
+        </span>
+      </div>
+      <div class="chat-preview text-gray-600 mt-2">
+        <span [ngClass]="{'font-bold': conversation.unreadMessagesFor.includes(currentUserId)}">
+          {{ getLastMessage(conversation) }}
+        </span>
+      </div>
+    </li>
+  </ul>
+</div>
+
+

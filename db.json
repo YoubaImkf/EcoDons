@@ -1,0 +1,198 @@
+{
+  "users": [
+    {
+      "name": "RED",
+      "email": "redouane@test.com",
+      "password": "Redouane123@",
+      "location": "Reims",
+      "favorites": [
+        "1",
+        "5",
+        "10",
+        "6",
+        "3",
+        "4"
+      ],
+      "id": "jCYh7e4"
+    },
+    {
+      "name": "belkacem",
+      "email": "red@test.com",
+      "password": "Redouane123@",
+      "location": "Reims",
+      "favorites": [
+        "1",
+        "2",
+        "3"
+      ],
+      "id": "2"
+    },
+    {
+      "name": "Alice",
+      "email": "alice@test.com",
+      "password": "Alice123@",
+      "location": "Lille",
+      "favorites": [
+        "5",
+        "6"
+      ],
+      "id": "3"
+    },
+    {
+      "name": "Sophie",
+      "email": "sophie@test.com",
+      "password": "Sophie123@",
+      "location": "Marseille",
+      "favorites": [
+        "9",
+        "7"
+      ],
+      "id": "4"
+    },
+    {
+      "name": "Marc",
+      "email": "marc@test.com",
+      "password": "Marc123@",
+      "location": "Bordeaux",
+      "favorites": [
+        "6",
+        "4"
+      ],
+      "id": "5"
+    }
+  ],
+  "items": [
+    {
+      "id": "1",
+      "title": "Table basse en verre",
+      "description": "Table basse en verre avec pieds en acier, en bon état.",
+      "category": "Meubles",
+      "photo": "http://localhost:3000/uploads/table-basse-verre.jpeg",
+      "status": "disponible",
+      "location": "Lyon",
+      "donor_id": "jCYh7e4"
+    },
+    {
+      "id": "12",
+      "title": "Poussette pour bébé",
+      "description": "Poussette compacte, facile à transporter.",
+      "category": "Puériculture",
+      "photo": "http://localhost:3000/uploads/poussette-bebe.jpeg",
+      "status": "disponible",
+      "location": "Lyon",
+      "donor_id": "jCYh7e4"
+    },
+    {
+      "id": "2",
+      "title": "vélo de ville",
+      "description": "Vélo de ville avec porte-bagage, parfait pour les trajets quotidiens.",
+      "category": "Sports et loisirs",
+      "photo": "http://localhost:3000/uploads/velo-ville.jpeg",
+      "status": "disponible",
+      "location": "Paris",
+      "donor_id": "2"
+    },
+    {
+      "id": "3",
+      "title": "ordinateur portable 15 pouces",
+      "description": "Ordinateur portable en bon état, parfait pour les tâches bureautiques.",
+      "category": "Informatique",
+      "photo": "http://localhost:3000/uploads/ordinateur-portable.jpeg",
+      "status": "disponible",
+      "location": "Toulouse",
+      "donor_id": "2"
+    },
+    {
+      "id": "4",
+      "title": "Canapé 3 places",
+      "description": "Canapé 3 places en tissu gris, très confortable.",
+      "category": "Meubles",
+      "photo": "http://localhost:3000/uploads/canape-3-places.jpeg",
+      "status": "disponible",
+      "location": "Nice",
+      "donor_id": "2"
+    },
+    {
+      "id": "5",
+      "title": "Télévision LED 40 pouces",
+      "description": "Télévision LED 40 pouces avec télécommande, en parfait état de fonctionnement.",
+      "category": "Électronique",
+      "photo": "http://localhost:3000/uploads/tv-led-40pouces.jpeg",
+      "status": "disponible",
+      "location": "Marseille",
+      "donor_id": "5"
+    },
+    {
+      "id": "6",
+      "title": "Lampe de chevet en bois",
+      "description": "Lampe de chevet avec pied en bois et abat-jour en tissu beige.",
+      "category": "Décoration",
+      "photo": "http://localhost:3000/uploads/lampe-chevet-bois.jpeg",
+      "status": "disponible",
+      "location": "Nantes",
+      "donor_id": "jCYh7e4"
+    },
+    {
+      "id": "7",
+      "title": "Four micro-ondes",
+      "description": "Four micro-ondes fonctionnel, idéal pour une petite cuisine.",
+      "category": "Appareils électroménagers",
+      "photo": "http://localhost:3000/uploads/four-micro-ondes.jpeg",
+      "status": "donné",
+      "location": "Lille",
+      "donor_id": "3"
+    },
+    {
+      "id": "8",
+      "title": "Table basse en verre",
+      "description": "Table basse en verre moderne, parfait état.",
+      "category": "Meubles",
+      "photo": "http://localhost:3000/uploads/table-basse-verre.jpeg",
+      "status": "disponible",
+      "location": "Paris",
+      "donor_id": "5"
+    },
+    {
+      "id": "9",
+      "title": "Machine à café expresso",
+      "description": "Machine à café expresso en très bon état, pour de délicieux cafés à la maison.",
+      "category": "Appareils électroménagers",
+      "photo": "http://localhost:3000/uploads/machine-cafe-expresso.jpeg",
+      "status": "disponible",
+      "location": "Bordeaux",
+      "donor_id": "3"
+    },
+    {
+      "id": "10",
+      "title": "Bibliothèque en bois",
+      "description": "Grande bibliothèque en bois, idéale pour ranger vos livres et décorations.",
+      "category": "Meubles",
+      "photo": "http://localhost:3000/uploads/bibliotheque-bois.jpeg",
+      "status": "disponible",
+      "location": "Rennes",
+      "donor_id": "4"
+    },
+    {
+      "id": "11",
+      "title": "Poussette pour bébé",
+      "description": "Poussette pour bébé confortable et facile à plier.",
+      "category": "Puériculture",
+      "photo": "http://localhost:3000/uploads/poussette-bebe.jpeg",
+      "status": "disponible",
+      "location": "Marseille",
+      "donor_id": "4"
+    }
+  ],
+  "donationHistory": [
+    {
+      "id": "1",
+      "item_id": "1",
+      "donor_id": "jCYh7e4",
+      "beneficiary_id": "2",
+      "date_donation": "2024-09-10"
+    }
+  ],
+  "conversations": [
+    
+  ]
+}

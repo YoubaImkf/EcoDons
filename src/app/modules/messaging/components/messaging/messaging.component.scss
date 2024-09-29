@@ -1,0 +1,17 @@
+.messaging-layout {
+  display: flex;
+  height: 100vh;
+  background-color: #edf2f7; 
+}
+
+.chat-list-container {
+  width: 30%;
+  background-color: #f8f9fa;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.chat-window-container {
+  width: 70%;
+  background-color: white;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+}

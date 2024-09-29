@@ -1,0 +1,30 @@
+.footer {
+  @apply bg-gray-900 text-white py-12 text-center;
+
+  .footer-text {
+    @apply text-lg text-gray-400; 
+  }
+
+  .footer-links {
+    @apply flex justify-center space-x-8 mt-6;
+
+    .footer-link {
+      @apply text-gray-300 hover:text-white transition-colors duration-200;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .footer-social {
+    @apply flex justify-center space-x-8 mt-8;
+
+    .social-link {
+      @apply text-gray-300 hover:text-white transition-colors duration-200 inline-flex items-center;
+      i {
+        @apply text-xl mr-2;
+      }
+    }
+  }
+}
+

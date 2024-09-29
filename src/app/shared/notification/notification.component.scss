@@ -1,0 +1,18 @@
+.notification-container {
+    @apply transition-transform transform-gpu ease-in-out;
+    animation: slideIn 0.3s forwards;
+  
+    button {
+      @apply focus:outline-none text-gray-600 hover:text-black;
+    }
+  
+    @keyframes slideIn {
+      from {
+        transform: translateX(100%);
+      }
+      to {
+        transform: translateX(0);
+      }
+    }
+  }
+  

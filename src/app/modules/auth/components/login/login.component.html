@@ -1,0 +1,37 @@
+<div class="background-container relative bg-cover bg-center min-h-screen flex items-center justify-center">
+  <div class="max-w-4xl mx-auto bg-cream p-12 rounded-xl shadow-lg">
+    <h2 class="text-4xl font-extrabold text-center text-teal-700 mb-8">Connexion</h2>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div class="mb-8">
+        <label for="email" class="block text-lg font-semibold text-teal-800">Email</label>
+        <input id="email" type="email" formControlName="email" 
+               class="mt-2 block w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition duration-200 ease-in-out" />
+        <div *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched">
+          <small class="text-red-500">Email invalide.</small>
+        </div>
+      </div>
+
+      <div class="mb-8">
+        <label for="password" class="block text-lg font-semibold text-teal-800">Mot de passe</label>
+        <input id="password" type="password" formControlName="password" 
+               class="mt-2 block w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition duration-200 ease-in-out" />
+        <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
+          <small class="text-red-500">Mot de passe invalide.</small>
+        </div>
+      </div>
+
+      <div *ngIf="errorMessage" class="text-red-600 mb-4">{{ errorMessage }}</div>
+
+      <button type="submit" 
+              class="w-full bg-teal-700 text-white px-6 py-4 rounded-lg font-semibold hover:bg-teal-800 focus:outline-none focus:ring-2 focus:ring-teal-500 transition duration-300 ease-in-out">
+        Se connecter
+      </button>
+
+      <div class="text-center mt-6">
+        <a routerLink="/auth/signup" class="text-teal-600 hover:text-teal-800 transition">Vous n'avez pas de compte ? Inscrivez-vous</a>
+      </div>
+    </form>
+  </div>
+</div>
+
+

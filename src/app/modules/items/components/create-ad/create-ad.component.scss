@@ -1,0 +1,49 @@
+.background-container {
+  @apply relative bg-cover bg-center min-h-screen flex items-center justify-center;
+  background-image: url('../../../../../assets/fond.jpeg'); 
+}
+
+.max-w-4xl {
+  max-width: 56rem;
+  background-color: #fdf8f5; 
+  border-radius: 1rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+
+input, select, textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease-in-out;
+
+  &:focus {
+    border-color: #2c7a7b;
+    ring: 2px solid #2c7a7b;
+  }
+}
+
+
+button {
+  background-color: #2c7a7b;
+  color: #ffffff;
+  padding: 1rem 1.5rem;
+  border-radius: 9999px;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    background-color: #285e61;
+    transform: scale(1.05);
+  }
+
+  &.gray-button {
+    background-color: #6b7280;
+    &:hover {
+      background-color: #4b5563;
+    }
+  }
+}
+
+
+  

@@ -1,0 +1,38 @@
+.chat-list {
+    height: 100vh;
+    padding: 1rem;
+    background-color: #f8f9fa;
+    overflow-y: auto;
+  
+    li {
+      background-color: white;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      margin-bottom: 1rem;
+      transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+      
+      &:hover {
+        background-color: #e6fffa;
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+    }
+  
+    .avatar {
+      @apply w-10 h-10 rounded-full bg-emerald-500 flex items-center justify-center text-white font-bold;
+    }
+  
+    .unread {
+      font-weight: bold;
+    }
+  
+    .chat-user {
+      font-size: 1.1rem;
+    }
+  
+    .chat-preview {
+      font-size: 0.95rem;
+      color: #4a5568;
+    }
+  }
+  

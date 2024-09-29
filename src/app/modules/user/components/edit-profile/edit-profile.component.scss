@@ -1,0 +1,65 @@
+.background-container {
+    @apply relative bg-cover bg-center min-h-screen flex items-center justify-center;
+    background-image: url('../../../../../assets/fond.jpeg');
+  }
+  
+  .max-w-4xl {
+    max-width: 56rem;
+    margin: 0 auto;
+    background-color: #fdf8f5;
+    padding: 3rem;
+    border-radius: 1rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  }
+
+  h2 {
+    font-size: 2.5rem;
+    color: #2c7a7b;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  input, select {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.5rem;
+    transition: all 0.2s ease-in-out;
+  
+    &:focus {
+      border-color: #2c7a7b;
+      ring: 2px solid #2c7a7b;
+    }
+  }
+
+  small {
+    color: #f87171;
+  }
+
+  button {
+    width: 100%;
+    background-color: #2c7a7b;
+    color: #ffffff;
+    padding: 1rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    transition: all 0.3s ease-in-out;
+  
+    &:hover {
+      background-color: #285e61;
+      transform: scale(1.02);
+    }
+  }
+  
+  .text-center a {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #2c7a7b;
+    text-decoration: none;
+    &:hover {
+      color: #285e61;
+      text-decoration: underline;
+    }
+  }
+  
+  

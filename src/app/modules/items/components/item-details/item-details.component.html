@@ -1,0 +1,22 @@
+<div class="item-details-container mx-auto bg-white p-12 rounded-xl shadow-lg">
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+    <div class="item-image">
+      <img [src]="item?.photo" alt="{{ item?.title }}" class="w-full rounded-lg shadow-lg">
+    </div>
+    <div class="item-info">
+      <h2 class="text-4xl font-extrabold text-teal-700 mb-6">{{ item?.title }}</h2>
+      <p class="text-lg text-gray-700 mb-4">{{ item?.description }}</p>
+      <p class="text-lg"><strong>Catégorie:</strong> <span class="text-teal-700">{{ item?.category }}</span></p>
+      <p class="text-lg"><strong>Localisation:</strong> <span class="text-teal-700">{{ item?.location }}</span></p>
+      <p class="text-lg"><strong>Status:</strong> <span [ngClass]="{'text-green-600': item?.status === 'disponible', 'text-red-600': item?.status !== 'disponible'}">{{ item?.status }}</span></p>
+      <div class="mt-8 flex space-x-4">
+        <button (click)="addToFavorites(item.id)" class="w-full lg:w-auto bg-teal-700 text-white px-6 py-3 rounded-lg font-semibold hover:bg-teal-800 transition transform hover:scale-105">
+          Ajouter aux favoris
+        </button>
+        <button (click)="contactDonor(item)" class="bg-gray-500 text-white px-4 py-2 rounded-full shadow mt-4 hover:bg-gray-600 transition-transform transform hover:scale-105">
+          Contacter
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
