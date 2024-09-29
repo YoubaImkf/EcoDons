@@ -40,7 +40,7 @@ EcoDons is an Angular-based web application that promotes the reuse of items to 
      ```bash
      npm run start:server
      ```
-   - Alternatively, you can also run:
+   - Also run:
      ```bash
      node server.js
      ```
